@@ -1,7 +1,10 @@
 #include <iostream>
 #include "Position.h"
 
-Position::Position(){}
+Position::Position(){
+	coord.X = 0;
+	coord.Y = 0;
+}
 
 Position::Position(int x, int y)
 {
@@ -15,6 +18,12 @@ void Position::setCursorPos(int x, int y)
 	coord.Y = y;
 
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
+void Position::moveCursor(int x, int y)
+{
+	coord.X += x;
+	coord.Y += y;
 }
 
 void Position::setX(int x)

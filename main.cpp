@@ -8,29 +8,12 @@
 
 using namespace std;
 
-//Initialize cursor 
-void CursorInit(Position coordinate) {
-
-	HANDLE hStdout;
-	COORD coord;
-
-	hStdout = GetStdHandle(STD_OUTPUT_HANDLE);
-
-	coord.X = coordinate.getX();
-
-	coord.Y = coordinate.getY();
-
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
-}
-
 int main()
 {
-	Position pos(0, 0);
+	string text;
 	Editor ed("input.txt");
 
-	CursorInit(pos);
 
 	ed.run();
-
 	
 }

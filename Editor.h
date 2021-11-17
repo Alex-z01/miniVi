@@ -24,11 +24,13 @@ public:
 	void Save();
 	bool Quit();
 private:
-	string fileName;
+	string fileName, tempText;
 	char command;
 	bool isRunning = true;
-	LinkedList<char> allText;
+	bool changes = false;
+	LinkedList<string> allText;
 	fstream myFile;
+	Position pos;
 };
 
 #endif // !EDITOR_H
