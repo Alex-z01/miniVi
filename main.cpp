@@ -15,5 +15,4 @@ int main()
 
 
 	ed.run();
-	
 }

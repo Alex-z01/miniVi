@@ -131,14 +131,25 @@ void Editor::run()
 			break;
 		}
 	default:
-		//WriteChar(command);
+		WriteChar(command);
 		run();
 	}
 }
 
 void Editor::WriteChar(char cmd)
 {
-	//allText.insert(allText.getLength(), cmd);
+	string cur = allText.getEntry(pos.getY() + 1);
+	string L1, L2;
+	for (int i = 0; i < pos.getX(); i++)
+	{
+		L1 += cur[i];
+	}
+	for (int i = pos.getX(); i < cur.length(); i++)
+	{
+		L2 += cur[i];
+	}
+	string newline = L1 + cmd + L2;
+	allText.replace(pos.getY()+1, newline);
 }
 
 void Editor::DeleteChar()
@@ -162,7 +173,7 @@ void Editor::Save()
 
 	for (int i = 0; i < allText.getLength(); i++)
 	{
-		myFile << allText.getEntry(i+1);
+		myFile << allText.getEntry(i + 1) << endl;
 	}
 
 	myFile.close();
