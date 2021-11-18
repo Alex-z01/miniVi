@@ -66,11 +66,6 @@ void Editor::run()
 		DeleteChar();
 		run();
 		break;
-	case ':':
-		// moves cursor to bottom
-		cout << "Command found" << endl;
-		run();
-		break;
 	case 'q':
 		command = _getch();
 		switch (command)
@@ -116,6 +111,10 @@ void Editor::run()
 		{
 			pos.moveCursor(1, 0);
 		}
+		run();
+		break;
+	case ':':
+		pos.moveCursor(0, allText.getLength());
 		run();
 		break;
 	case 'd':
