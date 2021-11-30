@@ -245,12 +245,16 @@ void Editor::Move(string direction)
 		if (pos.getY() > 0)
 		{
 			pos.moveCursor(0, -1);
+			if(pos.getX() > allText.getEntry(pos.getY() + 1).length())
+				pos.setX(allText.getEntry(pos.getY() + 1).length());
 		}
 	}
 	if (direction == "DOWN") {
 		if (pos.getY() < allText.getLength() - 1)
 		{
 			pos.moveCursor(0, 1);
+			if (pos.getX() > allText.getEntry(pos.getY() + 1).length())
+				pos.setX(allText.getEntry(pos.getY() + 1).length());
 		}
 	}
 	if (direction == "LEFT") {
