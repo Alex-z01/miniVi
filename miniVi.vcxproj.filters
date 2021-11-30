@@ -27,9 +27,16 @@
     <ClCompile Include="Position.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="quicksort.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Undo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="keywords.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor.h">
@@ -48,6 +55,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Position.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StackInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkedStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Undo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

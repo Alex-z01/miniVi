@@ -23,17 +23,23 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="PrecondViolatedExcep.cpp" />
+    <ClCompile Include="quicksort.cpp" />
+    <ClCompile Include="Undo.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="input.txt" />
+    <Text Include="keywords.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Editor.h" />
     <ClInclude Include="LinkedList.h" />
+    <ClInclude Include="LinkedStack.h" />
     <ClInclude Include="ListInterface.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="PrecondViolatedExcep.h" />
+    <ClInclude Include="StackInterface.h" />
+    <ClInclude Include="Undo.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
