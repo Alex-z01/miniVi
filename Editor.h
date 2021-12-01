@@ -18,9 +18,9 @@ class Editor
 {
 public:
 	Editor();
-	Editor(string fileName);
+	Editor(char* inputFile, string keywordsFile);
 	void run();
-	void ReadKeywords();
+	void ReadKeywords(string file);
 	void Move(string direction);
 	void DisplayLines();
 	void CurrentLine();

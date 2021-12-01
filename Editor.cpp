@@ -65,16 +65,16 @@ int binarySearch(const string anArray[], int first, int last, string target)
 //Defualt Constructor
 Editor::Editor()
 {
-	ReadKeywords();
+	ReadKeywords("keywords.txt");
 }
 
 //Constructor with given file
-Editor::Editor(string file)
+Editor::Editor(char* inputFile, string keywordsFile)
 {
-	ReadKeywords();
-
-	fileName = file;
-	myFile.open(fileName);
+	ReadKeywords(keywordsFile);
+	
+	fileName = inputFile;
+	myFile.open(inputFile);
 
 	int counter = 1;
 
@@ -90,10 +90,10 @@ Editor::Editor(string file)
 }
 
 //Read keywords from file into array and sort array
-void Editor::ReadKeywords()
+void Editor::ReadKeywords(string filename)
 {
 	fstream file;
-	file.open("keywords.txt");
+	file.open(filename);
 
 	int counter = 0;
 	while (!file.eof())
@@ -161,6 +161,11 @@ void Editor::run()
 		run();
 		break;
 	case 'q':
+		if (Quit()) { break; }
+		else { run(); break; }
+		run();
+		break;
+		/*
 		command = _getch();
 		switch (command)
 		{
@@ -169,13 +174,11 @@ void Editor::run()
 			exit;
 			break;
 		default:
-			if (Quit()) { break; }
-			else { run(); break; }
-			run();
-			break;
+
 		}
 		break;
-	case 'w':
+		*/
+	case 'w': // Save
 		Save();
 		run();
 		break;
@@ -229,7 +232,6 @@ void Editor::run()
 			run();
 			break;
 		default:
-			WriteChar(command);
 			run();
 			break;
 		}
@@ -343,7 +345,7 @@ void Editor::Save()
 	{
 		myFile << allText.getEntry(i + 1) << endl;
 	}
-
+	changes = false;
 	myFile.close();
 
 }
@@ -353,7 +355,7 @@ bool Editor::Quit()
 {
 	string cond;
 	pos.setCursorPos(0, allText.getLength());
-
+	
 	if (changes)
 	{
 		cout << "Do you want to quit without saving? y/n" << endl;

@@ -2,17 +2,13 @@
 #include <fstream>
 #include <string>
 #include <list>
-#include <conio.h>
 #include "Editor.h"
-#include "Position.h"
 
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
-	string text;
-	Editor ed("input.txt");
-
+	Editor ed(argv[1], "keywords.txt");
 
 	ed.run();
 }
